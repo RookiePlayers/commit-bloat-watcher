@@ -3,12 +3,7 @@ import { execSync } from "node:child_process";
 import inquirer from "inquirer";
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers";
-
-interface Change {
-    file: string;
-    added: number;
-    deleted: number;
-}
+import { Change, parseNumstat, summarize } from "./core";
 
 function runGit(cmd: string): string {
     return execSync(cmd, { encoding: "utf8" }).trim();
@@ -17,27 +12,7 @@ function runGit(cmd: string): string {
 function getChanges(): Change[] {
     // Includes staged + unstaged changes vs HEAD
     const diff = runGit("git diff --numstat");
-    if (!diff) return [];
-
-    return diff
-        .split("\n")
-        .filter(Boolean)
-        .map((line) => {
-            const [added, deleted, ...pathParts] = line.split("\t");
-            const file = pathParts.join("\t");
-            const toInt = (x: string) => (x === "-" ? 0 : parseInt(x, 10) || 0);
-            return {
-                file,
-                added: toInt(added),
-                deleted: toInt(deleted),
-            };
-        });
-}
-
-function summarize(changes: Change[]) {
-    const files = changes.length;
-    const lines = changes.reduce((acc, c) => acc + c.added + c.deleted, 0);
-    return { files, lines };
+    return parseNumstat(diff);
 }
 
 async function interactiveBucketing(

@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/RookiePlayers/commit-bloat-watcher/compare/v1.0.3...v1.0.4) (2025-11-19)
+
+
+### Bug Fixes
+
+* Add build step and enhance pull request handling in deploy workflow ([3efb17c](https://github.com/RookiePlayers/commit-bloat-watcher/commit/3efb17cd2eecf0c092f83a4d3060e1fc03d926b5))
+
 ## [1.0.3](https://github.com/RookiePlayers/commit-bloat-watcher/compare/v1.0.2...v1.0.3) (2025-11-19)
 
 

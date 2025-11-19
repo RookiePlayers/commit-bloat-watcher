@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/RookiePlayers/commit-bloat-watcher/compare/v1.0.2...v1.0.3) (2025-11-19)
+
+
+### Bug Fixes
+
+* Enhance commit type check to analyze range of commits for publish eligibility ([dae5117](https://github.com/RookiePlayers/commit-bloat-watcher/commit/dae5117c8953655d64a0de1f141a1c21af38c65d))
+
 ## [1.0.2](https://github.com/RookiePlayers/commit-bloat-watcher/compare/v1.0.1...v1.0.2) (2025-11-19)
 
 

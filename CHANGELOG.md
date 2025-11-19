@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/RookiePlayers/commit-bloat-watcher/compare/v1.0.0...v1.0.1) (2025-11-19)
+
+
+### Bug Fixes
+
+* Add LICENSE and README files with project details and usage instructions ([19a90a3](https://github.com/RookiePlayers/commit-bloat-watcher/commit/19a90a3002fda93501d3ae094924ad7e6d8c5417))
+
 # 1.0.0 (2025-11-19)
 
 

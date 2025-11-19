@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "rootDir": "src",          // key: all inputs live under src/
+    "outDir": "dist",          // key: all outputs go to dist/
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
+    // optional but fine:
+    "declarationDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src"],          // key: ONLY compile src
+  "exclude": ["dist", "node_modules", "**/*.test.ts", "**/__tests__/**"] // be explicit
+}

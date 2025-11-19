@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/RookiePlayers/commit-bloat-watcher/compare/v1.0.1...v1.0.2) (2025-11-19)
+
+
+### Bug Fixes
+
+* Add pull request trigger for main branch in deploy workflow ([3c8f714](https://github.com/RookiePlayers/commit-bloat-watcher/commit/3c8f714792675b19a6eac3c73f73aff81305065e))
+
 ## [1.0.1](https://github.com/RookiePlayers/commit-bloat-watcher/compare/v1.0.0...v1.0.1) (2025-11-19)
 
 

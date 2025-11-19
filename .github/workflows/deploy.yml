@@ -108,16 +108,44 @@ jobs:
 
       - name: Check commit type
         id: commit_check
+        shell: bash
         run: |
           set -euo pipefail
-          COMMIT_MSG="$(git log -1 --pretty=%s)"
-          echo "Latest commit subject: $COMMIT_MSG"
-          if echo "$COMMIT_MSG" | grep -Eq '^(feat|fix)(\(|:)'; then
+
+          determine_range () {
+            case "${{ github.event_name }}" in
+              push)
+                if [ -n "${{ github.event.before }}" ]; then
+                  echo "${{ github.event.before }}..${{ github.sha }}"
+                  return
+                fi
+                ;;
+              pull_request)
+                echo "${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}"
+                return
+                ;;
+            esac
+            echo ""
+          }
+
+          RANGE="$(determine_range)"
+          if [ -n "$RANGE" ]; then
+            echo "Checking commit subjects in range: $RANGE"
+            COMMIT_SUBJECTS="$(git log --pretty=%s "$RANGE")"
+          else
+            echo "Falling back to the latest commit subject."
+            COMMIT_SUBJECTS="$(git log -1 --pretty=%s)"
+          fi
+
+          echo "Commit subjects considered:"
+          echo "$COMMIT_SUBJECTS"
+
+          if echo "$COMMIT_SUBJECTS" | grep -Eq '^(feat|fix)(\(|:)'; then
             echo "should_publish=true" >> "$GITHUB_OUTPUT"
-            echo "Commit qualifies for publish."
+            echo "At least one commit qualifies for publish."
           else
             echo "should_publish=false" >> "$GITHUB_OUTPUT"
-            echo "Commit does not qualify (requires feat|fix)."
+            echo "No commit in the analyzed range qualifies (requires feat|fix)."
           fi
 
       - name: Show npm pack (dry)

@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/RookiePlayers/commit-bloat-watcher/compare/v1.0.4...v1.0.5) (2025-11-21)
+
+
+### Bug Fixes
+
+* Update README to include correct badge links and remove development section ([a28c554](https://github.com/RookiePlayers/commit-bloat-watcher/commit/a28c554ce4476e802e15396b25f8480079d7213d))
+
 ## [1.0.4](https://github.com/RookiePlayers/commit-bloat-watcher/compare/v1.0.3...v1.0.4) (2025-11-19)
 
 

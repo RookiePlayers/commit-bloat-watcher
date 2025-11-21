@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/RookiePlayers/commit-bloat-watcher/compare/v1.0.5...v1.1.0) (2025-11-21)
+
+
+### Features
+
+* Add CSV files to .gitignore and create initial .vscode/settings.json ([464155f](https://github.com/RookiePlayers/commit-bloat-watcher/commit/464155f15e2673472e9493dbcd0a6e9003f4b83d))
+
 ## [1.0.5](https://github.com/RookiePlayers/commit-bloat-watcher/compare/v1.0.4...v1.0.5) (2025-11-21)
 
 

@@ -1,6 +1,10 @@
 # Commit Bloat Watcher
 
-[![CI](https://github.com/RookiePlayers/commit-bloat-watcher/actions/workflows/ci.yml/badge.svg)](https://github.com/RookiePlayers/commit-bloat-watcher/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/commit-bloat-watcher.svg)](https://www.npmjs.com/package/commit-bloat-watcher)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![Deploy](https://github.com/RookiePlayers/commit-bloat-watcher/actions/workflows/production.yml/badge.svg)](https://github.com/RookiePlayers/commit-bloat-watcher/actions/workflows/production.yml)
+[![Release](https://img.shields.io/github/release/RookiePlayers/commit-bloat-watcher.svg)](https://github.com/RookiePlayers/commit-bloat-watcher/releases)
+[![Issues](https://img.shields.io/github/issues/RookiePlayers/commit-bloat-watcher.svg)](https://github.com/RookiePlayers/commit-bloat-watcher/issues)
 
 Opinionated CLI that keeps commits small by inspecting your working tree and warning (or guiding you) when too many files or lines are staged. Use it from the terminal or wire it into a Husky hook so your team ships reviewable commits instead of mega-diffs.
 
@@ -57,19 +61,6 @@ npx commit-bloat-watcher --maxFiles 12 --maxLines 800 --quiet
 ```
 
 Exit codes are non-zero when the limits are exceeded, so your hook/CI job will fail automatically.
-
-## Development
-
-```bash
-npm install
-npm run lint
-npm test
-npm run build
-```
-
-- `npm test` runs the Vitest unit tests for the core diff parsing helpers.
-- `npm run build` bundles the CLI via `tsup`.
-- `npm run lint` ensures TypeScript sources pass ESLint.
 
 ## License
 
